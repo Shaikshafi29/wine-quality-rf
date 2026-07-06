@@ -1,1 +1,58 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Prediction Form</title>
+</head>
+<body>
+
+    <h2>Wine Features</h2>
+
+    <form action="{{url_for('predict')}}"method="post">
+
+        <label>Alcohol:</label><br>
+        <input type="number" step="any" name="alcohol"><br><br>
+
+        <label>Malic Acid:</label><br>
+        <input type="number" step="any" name="malic_acid"><br><br>
+
+        <label>Ash:</label><br>
+        <input type="number" step="any" name="ash"><br><br>
+
+        <label>Alcalinity of Ash:</label><br>
+        <input type="number" step="any" name="alcalinity_of_ash"><br><br>
+
+        <label>Magnesium:</label><br>
+        <input type="number" step="any" name="magnesium"><br><br>
+
+        <label>Total Phenols:</label><br>
+        <input type="number" step="any" name="total_phenols"><br><br>
+
+        <label>Flavanoids:</label><br>
+        <input type="number" step="any" name="flavanoids"><br><br>
+
+        <label>Nonflavanoid Phenols:</label><br>
+        <input type="number" step="any" name="nonflavanoid_phenols"><br><br>
+
+        <label>Proanthocyanins:</label><br>
+        <input type="number" step="any" name="proanthocyanins"><br><br>
+
+        <label>Color Intensity:</label><br>
+        <input type="number" step="any" name="color_intensity"><br><br>
+
+        <label>Hue:</label><br>
+        <input type="number" step="any" name="hue"><br><br>
+
+        <label>OD280/OD315 of Diluted Wines:</label><br>
+        <input type="number" step="any" name="od280_od315_of_diluted_wines"><br><br>
+
+        <label>Proline:</label><br>
+        <input type="number" step="any" name="proline"><br><br>
+
+        <input type="submit" value="Predict">
+
+    </form>
+{{prediction_text}}
+</body>
+</html>

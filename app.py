@@ -22,6 +22,18 @@ def predict_api():
     prediction = rfmodel.predict(new_data)
     return jsonify({'prediction':prediction.tolist()})
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    data=[float(x) for x in request.form.values()]
+    new_data = pd.DataFrame([data])
+
+    prediction = rfmodel.predict(new_data)
+    return render_template(
+    'home.html',
+    prediction_text=f'Predicted Wine Quality: {prediction[0]}'
+)
+
+
 if __name__=="__main__":
     app.run(debug=True)
     
